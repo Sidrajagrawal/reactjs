@@ -1,5 +1,4 @@
 // Using Pure JS
-
 // function createElement(type,className,id){
 //     const temp = document.createElement(type);
 //     if(className) temp.className = className;
@@ -33,26 +32,36 @@
 // const root = ReactDOM.createRoot(document.querySelector('#root'));
 // root.render(container);
 
-function createElement(type, prop, children) {
-    const temp = document.createElement(type);
-    if (prop) {
-        for (const property in prop) {
-            if (prop[property]) temp[property] = prop[property];
-        }
-    }
 
-    // if(children){
-    //     document.children[parent].append(temp);
-    // }
-    return temp;
-}
-const root = createElement('div', { id: 'root' });
-document.body.append(root);
-const container = createElement('div', { className: 'container', id: 'container' }, { parent: root });
-root.append(container);
-const section = createElement('section');
-container.append(section);
-const p = createElement('p', { innerText: 'The Libary for Web and Native user Interface' });;
-const img = createElement('img', { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg' });
-section.append(p);
-section.append(img);
+//Create our Own React type Create Element
+// function createElement(type, prop, children = []) {
+//     const temp = document.createElement(type);
+//     if (prop) {
+//         for (const property in prop) {
+//             if (prop[property]) temp[property] = prop[property];
+//         }
+//     }
+//     if (children) {
+//         for (const child of children) {
+//             temp.append(child);
+//         }
+//     }
+//     return temp;
+// }
+
+
+// const root = createElement('div', { id: 'root' });
+// document.body.append(root);
+// const container = createElement('div', { className: 'container', id: 'container' }, [
+//     createElement('section', null, [
+//         createElement(
+//             'p',
+//             { innerText: "The Libary for Web and Native user Interfac" }
+//         ),
+//         createElement(
+//             'img',
+//             { src: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" }
+//         )
+//     ])
+// ]);
+// root.append(container);
