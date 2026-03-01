@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.card {
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-content {
+    padding: 0 8px;
+}
+
+.card img {
+    width: 100%;
+    max-height: 150px;
+}
+
+.card p {
+    margin: 6px 0;
+}
