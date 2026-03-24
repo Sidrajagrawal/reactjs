@@ -1,0 +1,11 @@
+.AllRecipiesMain {
+    width: 100%;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
