@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    margin-top: 20vh;
+    width: 100vw;
+    display: flex;
+}
+.btn{
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+.AppleBasket-1,
+.AppleBasket-1 {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
