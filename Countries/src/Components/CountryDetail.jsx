@@ -1,22 +1,27 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 import { getThisCountry } from "./Data";
 import CountryDetailShimmer from "./CountryDetailShimmer";
 
 function CountryDetail() {
     const { code } = useParams();
+    const location = useLocation();
+    const passedCountries = location.state?.countries;
 
-    const [countryDetail, setCountryDetail] = useState(null);
+    const passedCountry = passedCountries?.find((country) => country.alpha3Code === code);    
+
+    const [countryDetail, setCountryDetail] = useState(passedCountry || null);
 
     useEffect(() => {
-        async function getDetail() {
-            const result = await getThisCountry(code);
-            setCountryDetail(result);
-            console.log(countryDetail);
+        if (!passedCountry && code) {
+            async function getDetail() {
+                const result = await getThisCountry(code);
+                setCountryDetail(result);
+            }
+            getDetail();
         }
+    }, [code, passedCountry]);
 
-        if (code) getDetail();
-    }, [code]);
     return (
         <div>
             {!countryDetail ? (
