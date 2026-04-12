@@ -1,0 +1,41 @@
+.shimmer-wrapper {
+    padding: 20px;
+}
+
+.shimmer {
+    background: linear-gradient(
+        90deg,
+        #eeeeee 25%,
+        #dddddd 50%,
+        #eeeeee 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.shimmer-title {
+    width: 40%;
+    height: 30px;
+}
+
+.shimmer-text {
+    width: 60%;
+    height: 18px;
+}
+
+.shimmer-image {
+    width: 300px;
+    height: 200px;
+    margin-top: 20px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
